@@ -140,3 +140,6 @@ bindkey -v
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+# dont color permissions
+unalias ls
