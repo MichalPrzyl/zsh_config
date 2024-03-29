@@ -5,6 +5,13 @@ function mp_func() {
 }
 zle -N mp_func
 
+function git_status() {
+  clear
+  git status
+  zle reset-prompt
+}
+zle -N git_status
+
 echo "Hello Mr. Przylucki"
 # bindkey '\C-x\C-e' mp_func
 
@@ -35,11 +42,9 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p11k.zsh
+
 # aliases
-alias nvim="/home/michal/programs/nvim/bin/nvim"
-alias v="nvim"
-alias mc='source /usr/lib/mc/mc-wrapper.sh'
-alias vconf='cd /home/michal/.config/nvim'
+## git
 alias st="git status"
 alias gdf="git diff"
 alias gdft="git difftool"
@@ -51,6 +56,13 @@ alias gb="git branch --show-current"
 alias ga="git add"
 alias ga.="git add ."
 alias log="git log"
+## neovim
+alias nvim="/home/michal/programs/nvim/bin/nvim"
+alias v="nvim"
+alias vconf='cd /home/michal/.config/nvim'
+alias vkeys="v ~/.config/nvim/lua/keymaps.lua"
+## other
+alias mc='source /usr/lib/mc/mc-wrapper.sh'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -65,3 +77,4 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # bindkeys
 bindkey '^E' mp_func
+bindkey '^G' git_status
