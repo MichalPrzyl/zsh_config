@@ -12,6 +12,33 @@ function git_status() {
 }
 zle -N git_status
 
+function list-files() {
+  clear
+  ls -al
+  zle reset-prompt
+}
+zle -N list-files
+
+
+
+
+# clears the shell and displays the dir tree with level 2
+clear-tree-2() {
+  clear
+  tree -L 2
+  zle reset-prompt
+}
+zle -N clear-tree-2
+
+
+# clears the shell and displays the dir tree with level 3
+clear-tree-3() {
+  clear
+  tree -L 3
+  zle reset-prompt
+}
+zle -N clear-tree-3
+
 echo "Hello Mr. Przylucki"
 # bindkey '\C-x\C-e' mp_func
 
@@ -78,3 +105,8 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # bindkeys
 bindkey '^E' mp_func
 bindkey '^G' git_status
+# bindkey '^L^L' list-files
+bindkey '^K' list-files
+bindkey '^J' clear-tree-2
+bindkey '^H' clear-tree-3
+
