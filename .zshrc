@@ -14,12 +14,10 @@ zle -N git_status
 
 function list-files() {
   clear
-  ls -al
+  ls -l
   zle reset-prompt
 }
 zle -N list-files
-
-
 
 
 # clears the shell and displays the dir tree with level 2
@@ -39,7 +37,19 @@ clear-tree-3() {
 }
 zle -N clear-tree-3
 
-echo "Hello Mr. Przylucki"
+
+# spashscreen
+echo "
+  _   _      _ _         __  __        ____                 _            _    _ 
+ | | | | ___| | | ___   |  \/  |_ __  |  _ \ _ __ _____   _| |_   _  ___| | _(_)
+ | |_| |/ _ \ | |/ _ \  | |\/| | '__| | |_) | '__|_  / | | | | | | |/ __| |/ / |
+ |  _  |  __/ | | (_) | | |  | | |    |  __/| |   / /| |_| | | |_| | (__|   <| |
+ |_| |_|\___|_|_|\___/  |_|  |_|_|    |_|   |_|  /___|\__, |_|\__,_|\___|_|\_\_|
+                                                      |___/                     
+What can I do for you today, sir?"
+
+
+
 # bindkey '\C-x\C-e' mp_func
 
 bindkey -s ^o "echo siema"
@@ -90,6 +100,40 @@ alias vconf='cd /home/michal/.config/nvim'
 alias vkeys="v ~/.config/nvim/lua/keymaps.lua"
 ## other
 alias mc='source /usr/lib/mc/mc-wrapper.sh'
+alias zshe='nvim ~/.zshrc'
+alias sz='clear; source ~/.zshrc'
+alias cs='create-script.sh'
+alias csp='create-python-script.sh'
+alias md='source create-dir.sh'
+
+# docker
+alias dk='docker'
+alias dkp='docker ps'
+alias dkpa='docker ps -a'
+alias dkpaq='docker ps -a -q'
+alias dkb='docker build -t'
+alias dkbnc='docker build --no-cache -t'
+alias dkr='docker run --rm'
+alias dkrti='docker run --rm -it'
+alias dkrd='docker run -d'
+alias dks='docker start'
+alias dkt='docker stop'
+alias dktt='docker stop $(docker ps -q)' # stop all runnninng containers
+alias dkk='docker kill'
+alias dkkk='docker kill $(docker ps -q)'
+alias dkrm='docker rm'
+alias dkri='docker rmi'
+alias dke='docker exec -ti'
+alias dkl='docker logs -f'
+alias dki='docker images'
+alias dkpu='docker pull'
+alias dkph='docker push'
+alias dkin='docker inspect'
+alias dkn='docker network'
+alias dkc='docker compose'
+alias dkcu='docker compose up'
+alias dkclean='docker ps -q -a -f status=exited | xargs -r docker rm && docker images -q -f dangling=true | xargs -r docker rmi'
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -110,3 +154,4 @@ bindkey '^K' list-files
 bindkey '^J' clear-tree-2
 bindkey '^H' clear-tree-3
 
+export PATH="$PATH:/home/$USER/bin"
