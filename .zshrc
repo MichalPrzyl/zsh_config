@@ -12,12 +12,6 @@ function git_status() {
 }
 zle -N git_status
 
-function list-files() {
-  clear
-  ls -l
-  zle reset-prompt
-}
-zle -N list-files
 
 
 # clears the shell and displays the dir tree with level 2
@@ -61,8 +55,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="arrow"
-# ZSH_THEME="kardan"
+# ZSH_THEME="arrow"
+ZSH_THEME="kardan"
 # ZSH_THEME="nicoulaj"
 # ZSH_THEME="refined"
 # ZSH_THEME="classyTouch"
@@ -133,6 +127,8 @@ alias dkn='docker network'
 alias dkc='docker compose'
 alias dkcu='docker compose up'
 alias dkclean='docker ps -q -a -f status=exited | xargs -r docker rm && docker images -q -f dangling=true | xargs -r docker rmi'
+alias dkcc='docker rm $(docker ps -a -q)'
+alias dkci='docker rmi $(docker images -q)'
 
 
 # Lines configured by zsh-newuser-install
@@ -146,6 +142,20 @@ bindkey -v
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
+
+
+
+# TODO Move those function at the end of the file so the other sources can be loaded
+function list-files() {
+  clear
+  ls -l
+  zle reset-prompt
+}
+zle -N list-files
+
+
+
+
 # bindkeys
 bindkey '^E' mp_func
 bindkey '^G' git_status
@@ -154,4 +164,4 @@ bindkey '^K' list-files
 bindkey '^J' clear-tree-2
 bindkey '^H' clear-tree-3
 
-export PATH="$PATH:/home/$USER/bin"
+export PATH="$PATH:/home/michal/bin"
