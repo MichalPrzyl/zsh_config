@@ -12,6 +12,12 @@ function git_status() {
 }
 zle -N git_status
 
+function print_wd() {
+  clear
+  pwd
+  zle reset-prompt
+}
+zle -N print_wd
 
 
 # clears the shell and displays the dir tree with level 2
@@ -163,5 +169,5 @@ bindkey '^G' git_status
 bindkey '^K' list-files
 bindkey '^J' clear-tree-2
 bindkey '^H' clear-tree-3
-
+bindkey '^P' print_wd
 export PATH="$PATH:/home/michal/bin"
