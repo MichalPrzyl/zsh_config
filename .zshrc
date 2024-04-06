@@ -93,6 +93,7 @@ alias gb="git branch --show-current"
 alias ga="git add"
 alias ga.="git add ."
 alias log="git log"
+alias gc-.='git checkout -- .'
 ## neovim
 alias nvim="/home/michal/programs/nvim/bin/nvim"
 alias v="nvim"
