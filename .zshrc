@@ -172,3 +172,9 @@ bindkey '^J' clear-tree-2
 bindkey '^H' clear-tree-3
 bindkey '^P' print_wd
 export PATH="$PATH:/home/michal/bin"
+
+
+# load local config if exists
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
