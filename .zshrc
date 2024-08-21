@@ -58,12 +58,12 @@ bindkey -s ^o "echo siema"
 export ZSH="$HOME/.oh-my-zsh"
 
 # zsh themes
-
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="arrow"
 # ZSH_THEME="kardan"
-ZSH_THEME="nicoulaj"
+# ZSH_THEME="nicoulaj"
 # ZSH_THEME="refined"
 # ZSH_THEME="classyTouch"
 
