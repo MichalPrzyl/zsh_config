@@ -178,3 +178,13 @@ export PATH="$PATH:/home/michal/bin"
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+alias cd='cd_and_ls'
+
+cd_and_ls() {
+    if [ -z "$1" ]; then
+        builtin cd
+    else
+        builtin cd "$1" && ls -al
+    fi
+}
