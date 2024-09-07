@@ -19,8 +19,7 @@ function print_wd() {
 }
 zle -N print_wd
 
-
-# clears the shell and displays the dir tree with level 2
+# Clears the shell and displays the dir tree with level 2.
 clear-tree-2() {
   clear
   tree -L 2
@@ -29,7 +28,7 @@ clear-tree-2() {
 zle -N clear-tree-2
 
 
-# clears the shell and displays the dir tree with level 3
+# Clears the shell and displays the dir tree with level 3.
 clear-tree-3() {
   clear
   tree -L 3
@@ -38,7 +37,7 @@ clear-tree-3() {
 zle -N clear-tree-3
 
 
-# spashscreen
+# Splashscreen.
 echo "
   _   _      _ _         __  __        ____                 _            _    _ 
  | | | | ___| | | ___   |  \/  |_ __  |  _ \ _ __ _____   _| |_   _  ___| | _(_)
@@ -47,8 +46,6 @@ echo "
  |_| |_|\___|_|_|\___/  |_|  |_|_|    |_|   |_|  /___|\__, |_|\__,_|\___|_|\_\_|
                                                       |___/                     
 What can I do for you today, sir?"
-
-
 
 # bindkey '\C-x\C-e' mp_func
 
@@ -67,12 +64,12 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="refined"
 # ZSH_THEME="classyTouch"
 
-
 plugins=(
 	git
 	zsh-autosuggestions
   z
 )
+
 source $ZSH/oh-my-zsh.sh
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
@@ -81,6 +78,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p11k.zsh
 
 # aliases
+
 ## git
 alias st="git status"
 alias gdf="git diff"
@@ -94,11 +92,13 @@ alias ga="git add"
 alias ga.="git add ."
 alias log="git log"
 alias gc-.='git checkout -- .'
+
 ## neovim
 alias nvim="/home/michal/programs/nvim/bin/nvim"
 alias v="nvim"
 alias vconf='cd /home/michal/.config/nvim'
 alias vkeys="v ~/.config/nvim/lua/keymaps.lua"
+
 ## other
 alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias zshe='nvim ~/.zshrc'
@@ -137,20 +137,19 @@ alias dkclean='docker ps -q -a -f status=exited | xargs -r docker rm && docker i
 alias dkcc='docker rm $(docker ps -a -q)'
 alias dkci='docker rmi $(docker images -q)'
 
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Vim motions in terminal.
 bindkey -v
+
 # End of lines configured by zsh-newuser-install
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
-
-
 
 # TODO Move those function at the end of the file so the other sources can be loaded
 function list-files() {
@@ -159,9 +158,6 @@ function list-files() {
   zle reset-prompt
 }
 zle -N list-files
-
-
-
 
 # bindkeys
 bindkey '^E' mp_func
@@ -172,7 +168,6 @@ bindkey '^J' clear-tree-2
 bindkey '^H' clear-tree-3
 bindkey '^P' print_wd
 export PATH="$PATH:/home/michal/bin"
-
 
 # load local config if exists
 if [ -f ~/.zshrc_local ]; then
