@@ -111,6 +111,7 @@ alias md='source create-dir.sh'
 alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
+alias dkpf="docker ps --format '{{.Names}}'"
 alias dkpaq='docker ps -a -q'
 alias dkb='docker build -t'
 alias dkbnc='docker build --no-cache -t'
