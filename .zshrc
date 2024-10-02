@@ -3,6 +3,7 @@ function mp_func() {
   echo "this is fucking awesome"
   zle reset-prompt
 }
+
 zle -N mp_func
 
 function git_status() {
