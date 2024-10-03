@@ -28,7 +28,6 @@ clear-tree-2() {
 }
 zle -N clear-tree-2
 
-
 # Clears the shell and displays the dir tree with level 3.
 clear-tree-3() {
   clear
@@ -36,7 +35,6 @@ clear-tree-3() {
   zle reset-prompt
 }
 zle -N clear-tree-3
-
 
 # Splashscreen.
 echo "
