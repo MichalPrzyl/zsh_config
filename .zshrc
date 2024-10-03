@@ -70,6 +70,7 @@ plugins=(
   z
 )
 
+setxkbmap -layout pl
 source $ZSH/oh-my-zsh.sh
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
