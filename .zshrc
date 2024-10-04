@@ -11,6 +11,7 @@ function git_status() {
   git status
   zle reset-prompt
 }
+
 zle -N git_status
 
 function print_wd() {
