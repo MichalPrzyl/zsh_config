@@ -187,3 +187,9 @@ cd_and_ls() {
         builtin cd "$1" && ls -al
     fi
 }
+
+# Uncomment this in case of full environment
+# with i3, picom, emacs, xrandr with ultra-wide res.
+# picom &>/dev/null &
+# export PATH=$PATH:$HOME/.emacs.d/bin
+# xrandr -s 3840x1080
