@@ -190,6 +190,8 @@ cd_and_ls() {
 
 # Uncomment this in case of full environment
 # with i3, picom, emacs, xrandr with ultra-wide res.
-# picom &>/dev/null &
-# export PATH=$PATH:$HOME/.emacs.d/bin
-# xrandr -s 3840x1080
+picom &>/dev/null &
+export PATH=$PATH:$HOME/.emacs.d/bin
+xrandr -s 3840x1080
+
+alias screen="scrot -s -o /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png"
